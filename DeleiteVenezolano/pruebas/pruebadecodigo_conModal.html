@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Deleite Venezolano</title>
+ <link rel="stylesheet" href="estilos.css">
+ <link rel="stylesheet" href="bootstrap-3.3.7-dist\css\bootstrap.min.css">
+  <script src="jquery-3.2.1.min.js"></script>
+  <script src="bootstrap-3.3.7-dist\js\bootstrap.min.js"></script>
+  <!--Estilo del carrusel-->
+ <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+  .tituloMenu{
+  	font-size: 20px;
+	font-weight: bold;
+ }
+  </style>
+<script type="text/javascript">
+	function ocultar(){
+		var inicio=document.getElementById("sec_inicio");
+		inicio.style.display="none";
+		var nosotros=document.getElementById("sec_nosotros");
+		nosotros.style.display="none";
+		var menu=document.getElementById("sec_menu");
+		menu.style.display="none";
+		var promocion=document.getElementById("sec_promociones");
+		promocion.style.display="none";
+		var contactenos=document.getElementById("sec_contactenos");
+		contactenos.style.display="none";
+		var comprar=document.getElementById("sec_comprar");
+		comprar.style.display="none";
+		var confirmado=document.getElementById("sec_confirmado");
+		confirmado.style.display="none";
+
+	}
+	function mostrar2(ref){
+		ocultar();
+		var elemento=document.getElementById(ref);
+		elemento.style.display="block";
+	}
+	function mostrar(ref){
+		ocultar();
+		var elemento=document.getElementById(ref);
+		elemento.style.display="block";
+	}
+	function principal(){
+		ocultar();
+		var inicio=document.getElementById("sec_inicio");
+		inicio.style.display="block";
+	}
+	function cambio(ref){
+		ocultar();
+		var elemento= document.getElementById(ref);
+		elemento.style.display="block";
+		if(ref=="sec_menu"){
+			salado();
+		}
+	}
+	//Para la barra de menu lateral
+	function ocultar2(){
+		var salado=document.getElementById("sec_salado");
+		salado.style.display="none";
+		var dulce=document.getElementById("sec_dulce");
+		dulce.style.display="none";
+		var bebidas=document.getElementById("sec_bebidas");
+		bebidas.style.display="none";
+		var adicionales=document.getElementById("sec_adicionales");
+		adicionales.style.display="none";
+	}
+	function salado(){
+		ocultar2();
+		var salado=document.getElementById("sec_salado");
+		salado.style.display="block";
+	}
+	function cambio2(ref){
+		ocultar2();
+		var elemento= document.getElementById(ref);
+		elemento.style.display="block";
+	}
+</script>
+<!--SDK para el inicio de facebook-->
+ <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.9&appId=1819488521703347";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!--Para los MODALS-->
+<script>
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal1").modal();
+    });
+});
+$(document).ready(function(){
+    $("#myBtn1").click(function(){
+        $("#myModal1").modal("hide");
+        $("#myModal").modal();
+    });
+});
+
+</script>
+<!--Para los MODALS-->
+  <style>
+  .modal-header, h4, .close {
+      background-color: #722020;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-footer {
+      background-color: #f9f9f9;
+  }
+  </style>
+
+
+</head>
+
+<body onload="principal()" class="container">
+
+
+	<div class="fondogris">
+	<h1 class="fondorojooscuro">
+		<img src="imagenes/Deleite.jpg" class="img-circle" width="300" height="100">
+		<a href="https://www.facebook.com/DeleiteVeneco/"><img src="imagenes/fb.png" width="40" height="40" ></a>
+		<a href="https://twitter.com/Deleite_Veneco"><img src="imagenes/twitter.png"  width="40" height="40" ></a>
+		<a href="https://www.instagram.com/deleite_veneco/"><img src="imagenes/instagram.png"  width="40" height="40" ></a>
+		<!--INGRESAR-->
+    	<button type="button" class="btn btn-default" id="myBtn"><span class="glyphicon glyphicon-user" width="10"></span> Ingresar</button>
+	</h1>
+	
+	<div class="linearoja">
+	<form action="" class="form-inline">
+		<div class="form-group">
+		<ul id="nav">
+		<li><a href="#" onclick="cambio('sec_inicio')">Inicio</a></li>
+		<li><a href="#" onclick="cambio('sec_nosotros')">Nosotros</a></li>
+		<li><a href="#" onclick="cambio('sec_menu')">Menú</a></li>
+		<li><a href="#" onclick="cambio('sec_promociones')">Promoción</a></li>
+		<li><a href="#" onclick="cambio('sec_contactenos')">Contactenos</a></li>
+	</ul>
+	</div>
+
+	<div class="form-group derecha">
+		<input class="form-control" id="buscar" type="text" placeholder="Buscar:" size="30">
+	</div>
+	</form>
+	</div>
+
+<div id="contenido" class="row">
+<section id="sec_inicio" >
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+      <div class="item active">
+        <img src="imagenes/sanguches.jpg" alt="Sanguches" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Sanguches</h3>
+          <p>Ricos sanguches venezolanos rellenos de carne, queso, jamon.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="imagenes/inicio.jpg" alt="Tequeños" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Tequeños</h3>
+          <p>Tequeños rellenos de queso, jamon.</p>
+        </div>
+      </div>
+    
+      <div class="item">
+        <img src="imagenes/empanadas.jpg" alt="Empanadas" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Empanadas</h3>
+          <p>Empanadas rellenas de care, queso, jamon.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+	<br>
+	<br>
+	<br>
+
+	<table >
+		<tr>
+			<td class="alinear_video" width="4500"><iframe width="700" height="350" src="https://www.youtube.com/embed/Yc51Tr2cTdc" frameborder="0" allowfullscreen></iframe></td>
+			<td id="border" width="600" > <h3>Nuestro Servicio</h3><br>
+			<p>¡Lo mejor de la comida venezolana ahora a un paso de ti. Somos la primera franquicia de comida venezolana en Lima, con una variedad de deliciosas Arepas y platos típicos. Visítanos en  nuestros locales.</p>
+			<br>
+			<br>
+			<br>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.446471870825!2d-77.07576032005508!3d-12.081557530743572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c90c768fcd0d%3A0x246dea0f7380b301!2sJir%C3%B3n+Caminos+del+Inca+209%2C+San+Miguel+15086!5e0!3m2!1ses!2spe!4v1492575213535"
+ 			width="400" class="alinear_video" height="200" frameborder="0" style="border:0" align="rigth"></iframe></td>
+		</tr>
+		
+	</table>
+<br><br>
+
+</section>
+<section id="sec_nosotros">
+<h2>NOSOTROS</h2><br>
+	<table>
+	<tr>
+		<td class="alinear" width="500"><h3>¿Quienes Somos?</h3> <br> <p>Somos un restaurante formado por venezolanos
+			que ofrece la comida tradicional de nuestro país, para que las personas puedan conocer mas de nuestra
+			cultura y que se deleiten con las delicias que ofrecemos.
+		</p>
+		<div>Delivery para Lima, Perú en los distritos de:
+			<div>- San Borja.</div>
+			<div>- Surquillo.</div>
+			<div>- Surco.</div>
+			<div>- Miraflores.</div>
+			<div>- San Isidro.</div>
+			<div>- La Molina.</div>
+			<div>- Magdalena del Mar.</div>
+			<div>- Jesús María.</div>
+			<div>- San Miguel.</div>
+		</div>
+		</td>
+		<td id="border" width="600"><iframe width="600" height="250" src="https://www.youtube.com/embed/Yc51Tr2cTdc" frameborder="0" allowfullscreen></iframe> </td>
+	</tr>
+	</table>
+	<br>
+	<table  >
+	<tr >
+		<td id="borderN"><h3>Mision</h3>
+		<div></div>
+		</td>
+		<td id="borderN"><h3>Vision</h3>
+		<div></div>
+		</td>
+	</tr>
+	<tr >
+		<td id="borderN"><h3>Objetivos</h3>
+		<div></div>
+		</td>
+		<td id="borderN"><h3>Valores</h3>
+		<div></div>
+		</td>
+	</tr>
+		
+</table>
+
+</section>
+<section id="sec_menu">
+	<div class="container">
+
+		<nav class="col-md-3" style="padding-bottom:160em;">
+	 <ul class="navbar" data-spy="affix" data-offset-top="205">
+      <li> <a href="#" onclick="cambio2('sec_salado')">Salado</a> </li>
+      <li> <a href="#" onclick="cambio2('sec_dulce')">Dulce</a> </li>
+      <li> <a href="#" onclick="cambio2('sec_bebidas')">Bebidas</a> </li>
+      <li> <a href="#" onclick="cambio2('sec_adicionales')">Adicionales</a> </li></ul>
+</nav>
+
+
+
+<section id="sec_salado">
+	  <div class="strong"> 
+		  <b>SALADO</b> 
+	  </div>  
+<br>
+<br>
+
+
+	  <div class="col-md-3">
+		  <img src="imagenes/Empanada 2.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenabajo">
+		<p class="tituloMenu">EMPANADAS</p>
+		<p>Las empanadas fritas rellenas de queso, jamon, carne mechada (deshilachada), pollo, jamon y queso o pabellon (frejol negro, carne mechada y platano frito). 	<br><br>	 <b>Porciones:</b> 5 empanadas. <br><b>Precio: 13 soles.</b></p>
+	  </div>
+
+	  <!--Linea punteada-->
+	  <div class="col-md-8 imagen1"> </div>
+
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/pataconAsado.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+			<p class="tituloMenu">PATACON</p>	
+		  <p>El patacon es una comida a base de trozos de platanos fritos. Relleno de carne o pollo mechado,jamon, queso, tomate, lechuga y cremas al gusto.
+			<br><br>	 <b>Porciones:</b> 1 patacon. <br><b>Precio: 15 soles.</b></p>
+	  </div>
+
+		  <!--Comentarios de facebook-->
+	  	  <div class="fb-comments col-md-8" 
+	  data-href="https://www.facebook.com/DeleiteVeneco/photos/a.526066547579604.1073741828.525686937617565/526076894245236/?type=3&amp;theater" 
+	  data-width="100%" data-height="10" data-numposts="2"></div>
+	  	  <!--Linea punteada-->
+	  <div class="col-md-8 imagen1"> </div>
+
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/Cachapa 2.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+		  	<p class="tituloMenu">CACHAPA</p>
+			<p>Cachapa hecha a base de puro maiz y tambien está rellena de delicioso queso fresco. <br><br>	 <b>Porciones:</b> 1 Cachapa. <br><b>Precio: 7 soles.</b> .</p>
+	  </div>
+
+	  <div class="col-md-8 imagen1"> </div>
+
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/arepa7.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">AREPA</p>
+			<p>La arepa se prepara con harina de maiz. Rellena de queso fresco, jamon y queso, carne mechada (deshilachada), pollo mechado (deshilachada) y aguacate (palta)    <br><br>	 <b>Porciones:</b> 1 Arepa. <br><b>Precio: 7 soles.</b> .</p>
+	  </div>
+
+	  <div class="col-md-8 imagen1"> </div>
+
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/pastelito.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">PASTELITOS</p>
+			<p>A base de harina de trigo. Relleno de queso, carne o pollo     <br><br>	 <b>Porciones:</b> 6 pastelitos. <br><b>Precio: 10 soles.</b> .</p>
+	  </div>
+	  <div class="col-md-8 imagen1"> </div>
+
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/pan3.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">PAN DE JAMÓN</p>
+			<p>Pan de 40 cm de largo, relleno de jamón, queso crema, tocino, pasas y aceitunas verdes.    <br><br>	 <b>Porciones:</b>1 pan de jamón. <br><b>Precio: 25 soles.</b> .</p>
+	  </div>
+
+	  <div class="col-md-8 imagen1"> </div>
+
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/Tequeños-venezolanos.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">TEQUEÑOS</p>
+			<p>Tequeños rellenos de queso, jamón y queso, queso y pepperoni.    <br><br>	 <b>Porciones:</b>5 tequeños. <br><b>Precio: 8 soles.</b> .</p>
+	  </div>
+
+</section>
+
+<section id="sec_dulce">
+	  <div class="col-md-offset-3 strong"> 
+		  <b>DULCE</b> 
+	  </div>  
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/arroz.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">ARROZ CON COCO</p>
+			<p>El arroz con coco o arroz de coco es una preparación a base de arroz blanco hervido en leche de coco y coco rallado.    <br><br>	 <b>Porciones:</b> 1 porcion. <br><b>Precio: 5 soles.</b> .</p>
+	  </div>
+
+	  <div class="col-md-8 imagen1"> </div>
+
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/crema.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">QUESILLO</p>
+			<p>El quesillo o crema volteada es un postre típico venezolano a base de leche condensada.    <br><br>	 <b>Porciones:</b>1 porcion. <br><b>Precio: 5 soles.</b> .</p>
+	  </div>
+
+	  <div class="col-md-8 imagen1"> </div>
+
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/Torta de auyama.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">TORTA DE AUYAMA</p>
+			<p>Esta torta es a base de auyama que tambien es conocida como zapallo.     <br><br>	 <b>Porciones:</b>1 porcion. <br><b>Precio: 4 soles.</b> .</p>
+	  </div>
+
+	  <div class="col-md-8 imagen1"> </div>
+
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/torta4.png" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">TORTA DE GALLETAS</p>
+			<p>Torta hecha de galleta y capas de chocolate.     <br><br>	 <b>Porciones:</b>1 porcion. <br><b>Precio: 7 soles.</b> .</p>
+	  </div>
+	  <div class="col-md-8 imagen1"> </div>
+
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/Alfajor 1.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">ALFAJORES</p>
+			<p>Alfajores de maicena rellenos de manjar blanco.     <br><br>	 <b>Porciones:</b>10 unidades. <br><b>Precio: 15 soles.</b> .</p>
+	  </div>
+	   <div class="col-md-8 imagen1"> </div>
+
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/majarete.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">MAJARETE</p>
+			<p>El majarete es preparado a base de harina de maiz, leche de coco, coco rallado, chancaca y canela .     <br><br>	 <b>Porciones:</b>1 porcion. <br><b>Precio: 7 soles.</b> .</p>
+	  </div>
+	   <div class="col-md-8 imagen1"> </div>
+
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/Golfeados.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">GOLFEADOS</p>
+			<p>Pancitos enrollados en forma de caracol, rellenos de chancaca rallada y queso, aromatizados con anís.     <br><br>	 <b>Porciones:</b>3 Golfeados. <br><b>Precio: 12 soles.</b> .</p>
+	  </div>
+
+
+</section>
+
+<section id="sec_bebidas">
+	  <div class="col-md-offset-3 strong"> 
+		  <b>BEBIDAS</b> 
+	  </div>  
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/Tizana.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">TIZANA</p>
+			<p>Bebida a base de pura fruta.     <br><br>	 <b>Porciones:</b>1 vaso. <br><b>Precio: 6 soles.</b> .</p>
+	  </div>
+
+	  <div class="col-md-8 imagen1"> </div>
+
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/chicha.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">CHICHA</p>
+			<p>A base de arroz y leche, con un toque de canela.     <br><br>	 <b>Porciones:</b>1 vaso. <br><b>Precio: 7 soles.</b> .</p>
+	  </div>
+
+
+	  <div class="col-md-8 imagen1"> </div>
+
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/cocada.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">COCADA</p>
+			<p>Esta bebida es peparada con puro coco y leche.     <br><br>	 <b>Porciones:</b>1 vaso. <br><b>Precio: 7 soles.</b> .</p>
+	  </div>
+
+	  <div class="col-md-8 imagen1"> </div>
+
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/malta.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">MALTIN POLAR</p>
+			<p>Malta es bebida refrescante con verdadero y rico sabor.     <br><br>	 <b>Porciones:</b>1 unidad/355ml. <br><b>Precio: 5 soles.</b> .</p>
+	  </div>
+
+	  <div class="col-md-8 imagen1"> </div>
+
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/golden.gif" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">GASEOSAS</p>
+			<p>Las gaseosas de golden tienen un increible sabor, puebalas en sus diferentes sabores: uva, manzana, naranja, piña y kolita.     <br><br>	 <b>Porciones:</b>1 unidad/355ml. <br><b>Precio: 5 soles.</b> .</p>
+	  </div>
+	  <div class="col-md-8 imagen1"> </div>
+
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/ponchecrema.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">PONCHE CREMA</p>
+			<p>El ponche crema es una bebida alcohólica típica de Venezuela hecha a base de azúcar, alcohol etílico, huevos y leche    <br><br>	 <b>Porciones:</b>1 vaso. <br><b>Precio: 7 soles.</b> .</p>
+	  </div>
+
+</section>
+
+<section id="sec_adicionales">
+	  <div class="col-md-offset-3 strong"> 
+		  <b>ADICIONALES</b> 
+	  </div>  
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/brocheta2.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">BROCHETA DE FRUTAS </p>
+			<p>Compuesto por uva, fresa, piña, melon y banana y de acompañante un poco de yogurt. <br><br>	 <b>Porciones:</b>3 brochetas. <br><b>Precio: 6 soles.</b> .</p>
+	  </div>
+
+	  <div class="col-md-8 imagen1"> </div>
+
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/brochetas.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">BROCHETA</p>
+			<p>Compuesta por chorizo y yuca acompañada salsa de guacamole.     <br><br>	 <b>Porciones:</b>4 brochetas. <br><b>Precio: 8 soles.</b> .</p>
+	  </div>
+	  <div class="col-md-8 imagen1"> </div>
+
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/papas.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">PAPAS FRITAS</p>
+			<p>Ricas y crocantes papas fritas acompañadas con ketchup .     <br><br>	 <b>Porciones:</b>1 porcion. <br><b>Precio: 5 soles.</b> .</p>
+	  </div>
+	  <div class="col-md-8 imagen1"> </div>
+
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/camote.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">CAMOTE FRITO</p>
+			<p>El camote frito mas rico, dulce y crocante que puedes probar.     <br><br>	 <b>Porciones:</b>1 porcion. <br><b>Precio: 5 soles.</b> .</p>
+	  </div>
+
+	  <div class="col-md-8 imagen1"> </div>
+
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/yucafrita.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">YUCA FRITA</p>
+			<p>Yuca frita acompañada de una deliciosa salsa de guacamole.     <br><br>	 <b>Porciones:</b>1 porcion. <br><b>Precio: 5 soles.</b> .</p>
+	  </div>
+	  <div class="col-md-8 imagen1"> </div>
+
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/chorizo.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-5 margenarriba margenabajo">
+	  		<p class="tituloMenu">CHORIZO</p>
+			<p>Chorizo con el delicioso sabor de la parrilla.     <br><br>	 <b>Porciones:</b>4 chorizos. <br><b>Precio: 15 soles.</b> .</p>
+	  </div>
+
+</section>
+<!--Carrito de compras-->
+	  <a href="#" onclick="mostrar('sec_comprar')">
+          <span class="glyphicon glyphicon-shopping-cart" style="color:orangered" data-spy="affix" data-offset-top="205"></span>
+      </a>
+
+</div>
+</section>
+<section id="sec_promociones">
+	<div class="container">
+
+	  <div class="col-md-offset-1 strong"> 
+		  <b>Promociones</b> 
+	  </div>  
+
+	  <div class="col-md-6 margenarriba margenabajo">
+	  		<p class="tituloMenu">TIZANA</p>
+			<p>Bebida a base de pura fruta.     <br><br>	 <b>Porciones:</b>1 vaso. <br><b>Precio: 6 soles.</b> .</p>
+	  </div>
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/promocion1.jpg" alt="" width="400" height="200">
+	  </div>
+
+
+	  <div class="col-md-11 imagen1"> </div>
+
+	  	  <div class="col-md-6 margenarriba margenabajo">
+	  		<p class="tituloMenu">TIZANA</p>
+			<p>Bebida a base de pura fruta.     <br><br>	 <b>Porciones:</b>1 vaso. <br><b>Precio: 6 soles.</b> .</p>
+	  </div>
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/promocion2.jpg" alt="" width="400" height="200">
+	  </div>
+
+
+	  <div class="col-md-11 imagen1"> </div>
+
+	  	  <div class="col-md-6 margenarriba margenabajo">
+	  		<p class="tituloMenu">TIZANA</p>
+			<p>Bebida a base de pura fruta.     <br><br>	 <b>Porciones:</b>1 vaso. <br><b>Precio: 6 soles.</b> .</p>
+	  </div>
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/promocion3.jpg" alt="" width="400" height="200">
+	  </div>
+
+
+	  <div class="col-md-11 imagen1"> </div>
+
+	  	  <div class="col-md-6 margenarriba margenabajo">
+	  		<p class="tituloMenu">TIZANA</p>
+			<p>Bebida a base de pura fruta.     <br><br>	 <b>Porciones:</b>1 vaso. <br><b>Precio: 6 soles.</b> .</p>
+	  </div>
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/promocion4.jpg" alt="" width="400" height="200">
+	  </div>
+
+
+	  <div class="col-md-11 imagen1"> </div>
+
+	  	  <div class="col-md-6 margenarriba margenabajo">
+	  		<p class="tituloMenu">TIZANA</p>
+			<p>Bebida a base de pura fruta.     <br><br>	 <b>Porciones:</b>1 vaso. <br><b>Precio: 6 soles.</b> .</p>
+	  </div>
+
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/promocion5.jpg" alt="" width="400" height="200">
+	  </div>
+
+		
+<!--Carrito de compras-->
+	  <a href="#" onclick="mostrar('sec_comprar')">
+          <span class="glyphicon glyphicon-shopping-cart" style="color:orangered" data-spy="affix" data-offset-top="205"></span>
+      </a>
+    </div>
+</section>
+
+<section id="sec_comprar">
+<div class="container">
+	<p class="strong" style="padding-left:2em;">Confirmar Pedido</p>
+
+	<table>
+		<tr>
+	
+	  <div class="col-md-3 margenarriba">
+			<img src="imagenes/camote.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-9 margenarriba margenabajo">
+	  		<p class="tituloMenu">CAMOTE FRITO</p>
+			<p> <b for="p1">Cantidad:</b><select name="" id="p1">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				</select> <br><br><br><br><b>Precio: 5 soles.</b> .</p>
+	  </div>
+
+		</tr>
+		<tr>
+
+	  <div class="col-md-3">
+			<img src="imagenes/Empanada 2.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-9 margenabajo">
+	  		<p class="tituloMenu">EMPANADAS</p>
+			<p> <b for="p2">Cantidad:</b><select name="" id="p2">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				</select> <br><br><br><br><b>Precio: 13 soles.</b> .</p>
+	  </div>
+
+		</tr>
+		<tr>
+	  <div class="col-md-3">
+			<img src="imagenes/ponchecrema.jpg" alt="" width="250" height="170">
+	  </div>
+
+	  <div class="col-md-9 margenabajo">
+	  		<p class="tituloMenu">PONCHE CREMA</p>
+			<p> <b for="p3">Cantidad:</b><select name="" id="p3">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				</select> <br><br><br><br><b>Precio: 7 soles.</b> .</p>
+	  </div>
+		</tr>
+	</table>
+	<div style="padding-left:37em;">
+		<button class="btn btn-default btn-lg" onclick="mostrar2('sec_confirmado')">COMPRAR</button>
+	</div>
+		<p class="strong" style="padding-left:14em;">TOTAL: S/.25</p>
+</div>
+</section>
+
+<section id="sec_confirmado">
+
+<div class="container">
+
+<div style="padding-left:37em;">
+	<span class="glyphicon glyphicon-ok" style="color:green"></span>
+</div>
+<div style="padding-left:22em;">
+	<b style="font-size:60px;">PEDIDO RECIBIDO</b>
+</div>
+
+<div style="padding-left:15em;">
+	<p style="font-size:45px;">AGRADECEMOS SU PREFERENCIA</p>
+</div>
+
+<div style="padding-left:10em; padding-bottom:5em;">
+	<img src="imagenes/Deleite.jpg" alt="" width="900" height="300">
+</div>
+
+</div>
+
+</section>
+
+<section id="sec_contactenos">
+<h2 >CONTACTENOS</h2><br>
+<table >	
+<tr >
+		<td id="formulario" width="600"><center>
+		Nombres y Apellidos <br><input type="text"  id="texto"><br><br>
+		Correo Electronico <br><input type="text"  id="texto"><br><br>
+		Telefono de Contacto<br><input type="text"  id="texto"><br><br>
+		Comentarios<br><textarea name="comentarios" rows="10" cols="30"> </textarea><br><br>
+			<input type="button" value="Enviar" ></center>
+		</td>
+		<td id="border" width="600"><img src="imagenes/chef.jpg" width="450" height="450"></td>
+		</tr>
+</table>	
+
+</section>
+<!--MODALS-->
+    <div>
+
+  <!-- Modal Registrarse -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal contenido-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Registrarse</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-inline">
+              <div class="form-group">
+                <label for="nombre">Nombre: </label>
+                <input class="form-control" type="text" id="nombre" placeholder="Nombre:">
+              </div>
+              <div class="form-group">
+                <label for="apellido">Apellido: </label>
+                <input class="form-control" type="text" id="apellido" placeholder="Apellido:">
+              </div>
+            </div>
+            <br>
+            <div class="form-inline">
+              <div class="form-group">
+                <label for="tipodocumento">Tipo de documento: </label>
+                <select name="" id="tipodocumento" class="form-control">
+                    <option value="">DNI</option>
+                    <option value="">Pasaporte</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="numdocumento">Número_Doc: </label>
+                <input class="form-control" type="text" id="numdocumento" placeholder="Número de documento:">
+              </div>
+            </div>
+            <br>
+              <div class="form-group">
+                <label for="telefono">Teléfono/Celular: </label>
+                <input class="form-control" type="text" id="telefono" placeholder="Teléfono/Celular:">
+              </div>
+              <div class="form-group">
+                <label for="direccion">Dirección: </label>
+                <input class="form-control" type="text" id="direccion" placeholder="Dirección:">
+              </div>
+              <div class="form-group">
+                <label for="correo">Correo: </label>
+                <input class="form-control" type="text" id="Correo" placeholder="Correo:">
+              </div>
+            <div class="form-inline">
+              <div class="form-group">
+                <label for="contraseña">Contraseña: </label>
+                <input class="form-control" type="text" id="contraseña" placeholder="Contraseña:">
+              </div>
+              <div class="form-group">
+                <label for="confirmar">Confirmar: </label>
+                <input class="form-control" type="text" id="confirmar" placeholder="Confirmar contraseña:">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Crear</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Modal Ingresar -->
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal contenido-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> Deleite Venezolano</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form">
+            <div class="form-group">
+              <label for="username"><span class="glyphicon glyphicon-user"></span> Username</label>
+              <input type="text" class="form-control" id="username" placeholder="Correo Electrónico:">
+            </div>
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input type="text" class="form-control" id="psw" placeholder="Contraseña:">
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="" checked>Recordarme</label>
+            </div>
+              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Ingresar</button>
+          </form>
+		   <!--Boton del inicio de facebook-->
+		<div id="fb-root"></div>
+		  <div class="fb-login-button" data-width="350" data-max-rows="1" data-size="large" data-button-type="login_with"
+			 data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div> 
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancelar</button>
+          <p>No eres miembro?  <a href="#" id="myBtn1">Regístrate aquí</a>
+          <p>Olvido su <a href="#">Contraseña?</a></p>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+</div>
+
+</div>
+<br><br>
+</div>
+<footer>
+		<div style="padding-left:35em; position:absolute; float: right;" class="fb-like" data-href="https://www.facebook.com/DeleiteVeneco/" data-layout="standard" data-action="like" data-size="large" 
+		data-show-faces="true" data-share="true"></div>
+	<tr>
+		<td>
+		Telefonos: 01- 263 5521	<br>
+		Direccion: Calle Camino del Inca 209		<br>
+		Correo: <a style="color:white" data-email="deleite_veneco@hotmail.com" href="mailto:deleite_veneco@hotmail.com">deleite_veneco@hotmail.com </a>
+		</td>
+	</tr>
+	</footer>
+
+</body>
+</html>

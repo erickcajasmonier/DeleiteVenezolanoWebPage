@@ -1,0 +1,229 @@
+
+ body{
+ 	font-family: "Century Gothic";
+	margin-top: 0em;
+
+ 
+ 
+ }
+ section{
+ 	font-family: "Century Gothic";
+ }
+ span{
+ 	font-family: "Century Gothic";
+ }
+
+table{
+	border-top-color: none;
+	border-bottom-color: none;
+	
+}
+
+
+
+#contenido{
+	
+	overflow: hidden;
+	display: inline-block;
+	width: 100%;
+
+}
+#borderN{
+	width: 600px;
+	padding: 20px 20px;
+	border-collapse: collapse;
+	border: 1px solid black;
+
+}
+
+#texto{
+	font-family: "Century Gothic";
+	width: 250px;
+}
+#CajasTexto{
+	font-family: "Century Gothic";
+	padding-left:  3px;
+	
+}
+#boton{
+	height: 30px;
+	width: 100px;
+	font-family: "Century Gothic";
+	margin: 3px;
+}
+#celda{
+	width: 200px;
+	height: 50px;
+}
+
+footer{
+	
+	background-color: #A41B1B;
+	color: #ffffff;
+	width: auto;
+	height: 150px;
+	line-height: 30px;
+	font-size: 15px;
+	bottom: 0px;
+	font-family:"Century Gothic";   
+	padding: 20px 20px;
+	padding-top: 0;
+
+ }
+
+ .fondogris{
+	background-color: lightgray;
+ }
+ .fondorojooscuro{
+	background-color: #A41B1B;
+	margin-bottom: 0em;
+	margin-top: 0em;
+	height: 165px;
+	padding-top: 0em;
+	padding-left: 1em;
+ }
+
+.alinear{
+	padding-left: 3em;
+	padding-right: 2em;
+}
+.alinear_video{
+	padding-right: 2em;
+}
+ .imagen1{
+	border-bottom: 3px dotted gray;
+	padding-top: 1em;
+	margin-bottom: 2em;
+
+ }
+ .strong{
+	 font-size: 34px;
+	 margin: 1em 0em 0em;
+ }
+ .derecha{
+	 padding-left: 27em;
+ }
+
+ .linearoja{
+	border-bottom: 1px solid #722020;
+ }
+
+ .affix{
+	 top: 0;
+ }
+  .glyphicon1{
+	font-size: 70px;
+	
+	margin: 0;
+	
+  }
+  .margenarriba{
+	  padding-top: 3em;
+  }
+  .margenabajo{
+	  padding-bottom: 9em;
+  }
+  .glyphicon2{
+	  font-size: 20px;
+	  padding-left: 1em;
+	  color: goldenrod;
+  }
+  .glyphicon3{
+	  font-size: 20px;
+	  color: blue;
+  }
+/*menu lateral*/
+@media (min-width: 768px) {
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;margin-bottom: 0;
+  }
+  .sidebar-nav .navbar ul:not {
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    
+  }
+}
+
+@media (max-width: 768px){
+   .fondorojooscuro{
+
+	height: 200px;
+
+ }
+
+}
+
+
+    .carousel-inner>.item>img,
+    .carousel-inner>.item>a>img {
+      width: 70%;
+      margin: auto;
+    }
+
+    .tituloMenu {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    #hearts {
+      color: #ee8b2d;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    .video {
+      padding-bottom: 46.25%;
+      /*16:9*/
+      float: left;
+    }
+
+    .video iframe {
+      float: left;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80%;
+    }
+
+ <!--Para los MODALS-->
+
+    .modal-header,
+    h4,
+    .close {
+      background-color: #722020;
+      color: white !important;
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .modal-footer {
+      background-color: #f9f9f9;
+    }
+
+    .ventana span {
+      color: #fff;
+      background-color: #000;
+      padding: .2em .5em .3em .5em;
+      font-family: Arial;
+      font-weight: bold;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: -15px;
+      right: -20px;
+      cursor: pointer;
+    }
